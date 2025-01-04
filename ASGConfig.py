@@ -9,14 +9,14 @@ target_group_arn='arn:aws:elasticloadbalancing:us-east-1:975050024946:targetgrou
 # Create an Auto Scaling group
 response=asg.create_auto_scaling_group(
     AutoScalingGroupName='KumarB8ASG',
-    LaunchConfigurationName='KumarLaunchConfig',  # Ensure the launch configuration exists
+    LaunchConfigurationName='KumarLaunchConfig',  
     MinSize=1,
     MaxSize=3,
     DesiredCapacity=1,
-    VPCZoneIdentifier='subnet-01874c4512136bd62,subnet-08fa616f96d54dfc2',  # Comma-separated list of subnet IDs in different AZs
-    TargetGroupARNs=[target_group_arn],  # Target Group ARN(s)
-    HealthCheckType='EC2',  # Health check type, can also be 'ELB'
-    HealthCheckGracePeriod=300,  # Time before checking health of instances
+    VPCZoneIdentifier='subnet-01874c4512136bd62,subnet-08fa616f96d54dfc2',  
+    TargetGroupARNs=[target_group_arn], 
+    HealthCheckType='EC2', 
+    HealthCheckGracePeriod=300, 
     Tags=[
         {
             'Key': 'Name',
