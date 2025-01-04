@@ -11,17 +11,17 @@ echo "<html><body><h1>Welcome to your web server!</h1></body></html>" > /var/www
 '''
 
 instance = ec2.create_instances(
-    ImageId='ami-0e2c8caa4b6378d8c',  # Replace with a valid AMI ID
+    ImageId='ami-0e2c8caa4b6378d8c', 
     MinCount=1,
     MaxCount=1,
     InstanceType='t2.micro',
-    KeyName='jenki',  # Replace with your key pair name
+    KeyName='jenki',
     NetworkInterfaces=[
         {
             'AssociatePublicIpAddress': True,
-            'SubnetId': 'subnet-01874c4512136bd62',  # Replace with your subnet ID
+            'SubnetId': 'subnet-01874c4512136bd62', 
             'DeviceIndex': 0,
-            'Groups': ['sg-01f41ec5b97d3998c']  # Security group ID
+            'Groups': ['sg-01f41ec5b97d3998c']  
         }
     ],
     UserData=user_data_script
