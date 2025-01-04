@@ -101,7 +101,7 @@ def deploy_infrastructure():
 
     # Step 5: Create Auto Scaling Group
 
-    # Replace 'target_group_arn' with the actual ARN of your target group
+    # ARN of your target group
     target_group_arn='arn:aws:elasticloadbalancing:us-east-1:975050024946:targetgroup/KumarB8TG/04492d0b81352fad'
 
     # Create an Auto Scaling group
